@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+           background-color: rgb(4, 4, 4); 
+        }
+
+        h1{
+            color: #fefefe;
+        }
+
+        input{
+            margin-top: 20px;
+            padding: 8px 20px;
+            background-color: #e8ffe9;
+            color: rgb(5, 5, 5);
+            border-radius: 4px;    
+        }
+
+        .main{
+            font: 50px bold sans-serif;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+        }
+       
+
+        button{
+            cursor: pointer;
+            margin-top: 20px;
+            padding: 8px 20px;
+            background-color: #000000;
+            color: white;
+            border-radius: 4px;
+        }
+        #output{
+            font: 50px bold sans-serif;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+
+        }
+
+    </style>
+</head>
+<body>
+    
+    
+    <div class="main">
+    <h1>QUEUE</h1>
+    <label for="element"><h3>Enter The Element</h3></label>
+    <input type="text" id="element">
+    <br>
+    <button onclick="enq()">Enqueue</button>
+    <button onclick="deq()">Dequeue</button>
+    </div>
+    <h3 id="output"></h3>
+    <div>
+
+    </div>
+    <script>
+        var queue=[]
+
+        function enq(){
+            var input=document.getElementById("element").value;
+            
+            if(input!==''){
+            var ele=queue.push(input);
+            document.getElementById('element').value = '';
+            document.getElementById("output").innerHTML=queue;
+            }
+           
+
+
+        }
+        function deq(){
+            
+
+            var ele=queue.shift()
+            document.getElementById("output").innerHTML=queue;
+
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html>

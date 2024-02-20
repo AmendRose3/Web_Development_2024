@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Radio Button</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <form name="form1" id="form1" onsubmit="return validateForm()" method="post" >
+    <h1 class="huge">Seasons</h1>
+    First name:<input type="text" name="fname" value="donald"><br>
+    <input type="radio" name="s" id="winter" value="winter">winter<br>
+    <input type="radio" name="s" id="summer" value="summer">summer<br>
+    <button type="submit">Sumbit</button>
+    <br>
+    <br>
+    </form>
+    <h3 id="result"></h3>
+    <h4 id="result2"></h4>
+
+  </body>
+  <script>
+    
+    function validateForm(){
+        var x=document.forms["form1"]["fname"].value;
+        if(x==""){
+            alert("name not filled");
+            return false;
+        }
+    }
+  </script>
+</html>

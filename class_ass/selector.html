@@ -1,0 +1,54 @@
+<html>
+<head>
+<style>
+</style>
+</head>
+<body>
+<h1>Welcome</h1>
+<br>
+<p>Welcome to this fun page</p>
+<p>Life is beautiful<p>
+<br>
+<h1>Hobbies</h1>
+<br>
+<p>Reading is Beneficial</p>
+<br>
+<h1>Fruit</h1>
+<br>
+<p>Apple is healthy</p>
+<br>
+<h1 class="c1">Pets</h1>
+<p class="c1">Dogs are cute</p>
+<p class="c1">Cats are cute</p>
+<p id="output"></p>
+<script>
+ var a = document.querySelectorAll('p');
+ var h = document.querySelectorAll('h1');
+ var c1classes = document.querySelectorAll('.c1');
+ var paraC1 = document.querySelectorAll('p.c1');
+
+ var out = document.getElementById('output');
+
+ out.innerHTML += '<p><strong>Paragraphs:</strong></p>';
+ a.forEach(function (paragraph) {
+ out.innerHTML += '<p>' + paragraph.textContent + '</p>';
+ });
+
+ out.innerHTML += '<p><strong>Headings:</strong></p>';
+ h.forEach(function (heading) {
+ out.innerHTML += '<p>' + heading.textContent + '</p>';
+ });
+
+ out.innerHTML += '<p><strong>Paragraphs with class "c1":</strong></p>';
+ paraC1.forEach(function (c1Paragraph) {
+ out.innerHTML += '<p>' + c1Paragraph.textContent + '</p>';
+ });
+
+ out.innerHTML += '<p><strong>Class "c1":</strong></p>';
+ c1classes.forEach(function (c1Class) {
+ out.innerHTML += '<p>' + c1Class.textContent + '</p>';
+ });
+
+ </script>
+</body>
+</html>

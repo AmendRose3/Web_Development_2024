@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="f1" onsubmit="return check()">
+        Name:<input type="text" name="username" value="username" id="n1" > <br>
+        age:<input type="number" name="age" value="age" required id="n2" max="60"> <br>
+        mobileNo:<input type="tel" name="mobile" value="mobile number" pattern="[9|8][0-9]{9}" id="n3"> <br>
+        email:<input type="text" name="email" value="email" id="n4" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"> <br>
+        <label for="r1">Gender: </label>
+        Male:<input type="radio"  name="gender" value="Male" id="n5">
+        Female:<input type="radio"  name="gender" value="Female" id="n6">
+
+        <input type="submit" value="submit">
+    </form>
+    <br>
+    <br>
+    <h2 id="result"></h2>
+    <h2 id="radiotxt"></h2>
+</body>
+<script>
+    function check(){
+        var txt = "";
+        if(!document.getElementById("n1").checkValidity() )
+        {
+            txt+="username required"+"<br>"
+        }
+        if(!document.getElementById("n2").checkValidity() )
+        {
+            txt+="age required"+"<br>"
+        }
+        if(!document.getElementById("n3").checkValidity() )
+        {
+            txt+="mobile number required"+"<br>"
+        }
+        if(document.getElementById("n2").validity.rangeOverflow)
+        {
+            txt+="age exceeded"+"<br>"
+        }
+        if(document.getElementById("n3").validity.patternMismatch)
+        {
+            txt+="mobile number not matched"+"<br>"
+        }
+        if(document.getElementById("n4").validity.patternMismatch)
+        {
+            txt+="email not matched"+"<br>"
+        }
+
+        document.getElementById("result").innerHTML = txt;
+
+        var select = document.querySelector('input[name="gender"]:checked');
+
+        if(select != null){
+            document.getElementById("radiotxt").innerHTML = select.value + " selected";   
+        }
+
+        return txt === ""; // Prevent form submission if there are errors
+    }
+</script>
+</html>

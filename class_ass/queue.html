@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>QUEUE!</title>
+    <style>
+        body {
+            background-color: bisque;
+        }
+
+        #output {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>QUEUE!</h1>
+
+    <label for="element">Element:</label>
+    <input type="text" id="element">
+    <br>
+    <button onclick="enq()">Enqueue</button>
+    <br>
+    <button onclick="dq()">Dequeue</button>
+
+    <br>
+    <br>
+
+    <div id="output">
+        <p id="queue"></p>
+    </div>
+
+    <script>
+        var queue = [];
+
+        
+
+        function enq() {
+            var element = document.getElementById('element').value;
+
+            if (element !== '') {
+                queue.push(element);
+                document.getElementById('element').value = '';
+                document.getElementById('queue').textContent = queue;
+            }
+        }
+
+        function dq() {
+            if (queue.length > 0) {
+                var d = queue.shift();
+                document.getElementById('queue').textContent = queue;
+                alert('Dequeued element: ' + d);
+            } else {
+                alert('Queue is empty');
+            }
+        }
+        
+    </script>
+</body>
+
+</html>
