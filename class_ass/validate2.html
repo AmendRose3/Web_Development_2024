@@ -6,20 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-    <form name="f1" onsubmit="return check()">
-        Name:<input type="text" name="username" value="username" id="n1" > <br>
-        age:<input type="number" name="age" value="age" required id="n2" max="60"> <br>
-        mobileNo:<input type="tel" name="mobile" value="mobile number" pattern="[9|8][0-9]{9}" id="n3"> <br>
-        email:<input type="text" name="email" value="email" id="n4" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"> <br>
-        <label for="r1">Gender: </label>
-        Male:<input type="radio"  name="gender" value="Male" id="n5">
-        Female:<input type="radio"  name="gender" value="Female" id="n6">
-
-        <input type="submit" value="submit">
-    </form>
+    
+        Name:<input type="text" name="username"  id="n1" required> <br>
+        Age:<input type="number" name="age" required id="n2" max="60" > <br>
+        Mobile No:<input type="tel" name="mobile" pattern="[9|8][0-9]{9}" id="n3" required> <br>
+        Email:<input type="text" name="email" id="n4" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required> <br>
+        <label for="n5">Gender: </label>
+        Male:<input type="radio"  name="gender" value="Male" id="n5"  required>
+        Female:<input type="radio"  name="gender" value="Female" id="n6" required>
+        <label for="se">qualification: </label>
+        <select name="se" id="se" multiple>
+            <option value="BSc" id="o1"> Bsc</option>
+            <option value="Msc" id="o2"> Msc</option>
+            <option value="phd" id="o3"> phd</option>
+        </select>
+        <button type="button" onclick="check()">Submit</button>
+    
     <br>
     <br>
-    <h2 id="result"></h2>
+    <h2 id="result" style="color: green;"></h2>
+    <h2 id="o" style="color: rgb(128, 0, 94);"></h2>
     <h2 id="radiotxt"></h2>
 </body>
 <script>
@@ -52,13 +58,40 @@
 
         document.getElementById("result").innerHTML = txt;
 
-        var select = document.querySelector('input[name="gender"]:checked');
+        // var select = document.querySelector('input[name="gender"]:checked');
 
-        if(select != null){
-            document.getElementById("radiotxt").innerHTML = select.value + " selected";   
+        // if(select != null){
+        //     document.getElementById("radiotxt").innerHTML = select.value + " selected";   
+        // }
+
+        // var selectedOptions = document.getElementById("se");
+        // var optionValues = [];
+        // for(var i = 0; i < selectedOptions.options.length; i++) {
+        //     if(selectedOptions.options[i].selected) {
+        //         optionValues.push(selectedOptions.options[i].value);
+        //     }
+        // }
+        // document.getElementById("o").innerHTML = "Selected qualification(s): " + optionValues.join(", ");
+
+
+        var r=document.getElementById("n5").checked;
+        if(r){
+            document.getElementById("radiotxt").innerHTML+=document.getElementById("n5").value;
+        }
+        else{
+            document.getElementById("radiotxt").innerHTML+=document.getElementById("n6").value;
         }
 
-        return txt === ""; // Prevent form submission if there are errors
+        var s=document.getElementById("o1").checked;
+        if(s){
+            document.getElementById("radiotxt").innerHTML+=document.getElementById("o1").value;
+        }
+        else{
+            document.getElementById("radiotxt").innerHTML+=document.getElementById("o2").value;
+        }
+
+
+
     }
 </script>
 </html>

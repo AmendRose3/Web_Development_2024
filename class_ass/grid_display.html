@@ -1,0 +1,100 @@
+CODE:
+<html>
+<head>
+<style>
+ button{
+ cursor: pointer;
+ margin-top: 20px;
+ padding: 8px 20px;
+ background-color: black;
+ color: white;
+ border-radius: 4px;
+width:100px;
+ }
+.m1{
+grid-area:m1;
+height:100px;
+width:100px;
+}
+.m2{
+grid-area:m2;
+height:100px;
+width:100px;
+}
+.m3{
+grid-area:m3;
+height:100px;
+width:100px;
+}
+.d1{
+text-align:center;
+grid-area:d1;
+background-color:yellow;
+height:100px;
+width:500px;
+text-align:center;
+font-size:30px;
+border:3px solid green;
+}
+.d2{
+text-align:center;
+grid-area:d2;
+text-align:center;
+font-size:30px;
+background-color:yellow;
+height:100px;
+width:500px;
+border:3px solid green;
+}
+.d3{
+grid-area:d3;
+text-align:center;
+font-size:30px;
+background-color:yellow;
+height:100px;
+width:500px;
+border:3px solid green;
+}
+.movie{
+display: grid;
+ grid-template-areas:
+ 'm1 _ _ d1'
+ 'm2 _ _ d2'
+ 'm3 _ _ d3'
+ ;
+ gap: 10px;
+ padding: 10px;
+}
+#p1{
+display:none;
+}
+#p2{
+display:none;
+}
+#p3{
+display:none;
+}
+</style>
+</head>
+<body>
+<div class="movie">
+ <div class="m1"> <button onclick="showfun1()">COCO</button></div>
+ <div class="m2"> <button onclick="showfun2()">Moana</button></div>
+ <div class="m3"> <button onclick="showfun3()">Shrek</button></div>
+ <div class="d1"><p id="p1">COCO-An animated movie</p></div> 
+ <div class="d2"><p id="p2">Moana-Discovering your innerself</p></div>
+ <div class="d3"><p id="p3">Shrek-Defining real beauty</p></div>
+</div>
+<script>
+function showfun1(){
+document.getElementById("p1").style.display="inline";
+}
+function showfun2(){
+document.getElementById("p2").style.display="inline";
+}
+function showfun3(){
+document.getElementById("p3").style.display="inline";
+}
+</script>
+</body>
+</html>

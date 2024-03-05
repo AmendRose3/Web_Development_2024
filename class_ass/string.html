@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Sentance:<input type="text" name="txt"  id="txt" > <br>
+    <button type="button" onclick="check()">Submit</button>
+    <h1 id="result"></h1>
+</body>
+<script>
+    var ans=" ";
+    var text=[];
+    function check(){
+     text=(document.getElementById("txt").value).split(" ");
+    for(var i=0;i<text.length;i++){
+        text[i]="a"+text[i].split("").reverse().join("")+"a";
+        
+
+    }
+
+    ans=text.join(" ");
+    document.getElementById("result").innerHTML = ans;
+}
+
+</script>
+</html>

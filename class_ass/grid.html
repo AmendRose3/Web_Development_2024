@@ -9,17 +9,18 @@
 .item5 { grid-area: r;border:3px solid green; }
 .item6 { grid-area: f; border:3px solid green;}
 .grid-container {
-  height: 200px;
-  width: 30%;
+  
   display: grid;
   grid-template-columns: auto auto auto auto auto auto ;
   gap: 10px;
   padding: 10px;
+  justify-content: center;
   text-align: center;
   font-size: 20px;
+  margin: 50px;
 }
 
-.item1 {
+.item1{
       grid-column: 1 / span 6;
       grid-row: 1 / span 1;
       border:3px solid green;
@@ -60,13 +61,15 @@
 </head>
 <body>
     <div class="grid-container">
+
         <div class="item1">Header</div>
         <div class="item2">navigation Menu</div>
         <div class="item3">Content</div>
         <div class="item4">Main content</div> 
         <div class="item5">content</div>
         <div class="item6">Footer</div>
-       </div>
+        
+    </div>
        </body>
        </html>
        

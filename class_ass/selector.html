@@ -22,32 +22,26 @@
 <p class="c1">Cats are cute</p>
 <p id="output"></p>
 <script>
- var a = document.querySelectorAll('p');
- var h = document.querySelectorAll('h1');
- var c1classes = document.querySelectorAll('.c1');
- var paraC1 = document.querySelectorAll('p.c1');
+ // Select all elements
+var paragraphs = document.querySelectorAll('p');
 
- var out = document.getElementById('output');
+// Select all h1 elements
+var headings = document.querySelectorAll('h1');
 
- out.innerHTML += '<p><strong>Paragraphs:</strong></p>';
- a.forEach(function (paragraph) {
- out.innerHTML += '<p>' + paragraph.textContent + '</p>';
- });
+// Select all elements with class "c1"
+var c1Elements = document.querySelectorAll('.c1');
 
- out.innerHTML += '<p><strong>Headings:</strong></p>';
- h.forEach(function (heading) {
- out.innerHTML += '<p>' + heading.textContent + '</p>';
- });
+// Select all paragraph elements with class "c1"
+var paraC1 = document.querySelectorAll('p.c1');
 
- out.innerHTML += '<p><strong>Paragraphs with class "c1":</strong></p>';
- paraC1.forEach(function (c1Paragraph) {
- out.innerHTML += '<p>' + c1Paragraph.textContent + '</p>';
- });
+// Get the element with id "output"
+var =document.getElementById('output');
 
- out.innerHTML += '<p><strong>Class "c1":</strong></p>';
- c1classes.forEach(function (c1Class) {
- out.innerHTML += '<p>' + c1Class.textContent + '</p>';
- });
+// Loop through the paragraph elements and append content to the output element
+for (var i = 0; i < paragraphs.length; i++) {
+  output.innerHTML += paragraphs[i].textContent;
+}
+
 
  </script>
 </body>
