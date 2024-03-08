@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="DynamicArrayApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Array Sorting</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="ArrayController">
+
+  <h2>Dynamic Array Sorting</h2>
+
+  <label for="input">Enter a value:</label>
+  <input type="text" id="input" ng-model="value">
+  <button ng-click="addValue()">Add Value</button>
+
+  <hr>
+
+  <button ng-click="ASort()">Sort Ascending</button>
+  <button ng-click="DSort()">Sort Descending</button>
+
+  <hr>
+
+  <h3>Array:</h3>
+  <ul>
+    <li ng-repeat="item in array">{{ item }}</li>
+  </ul>
+
+  <script>
+    var app = angular.module('DynamicArrayApp', []);
+
+    app.controller('ArrayController', function($scope) {
+      $scope.array = [];
+      $scope.value = '';
+
+      $scope.addValue = function() {
+        if ($scope.value !== '') {
+          $scope.array.push($scope.value);
+          $scope.value = ''; 
+        }
+      };
+
+      $scope.ASort = function() {
+        $scope.array.sort();
+      };
+
+      $scope.DSort = function() {
+        $scope.array.sort().reverse();
+      };
+    });
+  </script>
+
+</body>
+</html>

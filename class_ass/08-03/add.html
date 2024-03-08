@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<input type="text" id="user" placeholder="Enter name:">
+<button id="b">Add to Beginning</button>
+<button id="e">Add to End</button>
+
+<ul id="l1">
+</ul>
+
+<script>
+$(document).ready(function(){
+    $("#b").click(function(){
+        var user = $("#user").val();
+        if(user !== "") {
+            $("#l1").prepend("<li>" + user + "</li>");
+            $("#user").val(""); 
+        }
+    });
+
+    $("#e").click(function(){
+        var user = $("#user").val();
+        if(user !== "") {
+            $("#l1").append("<li>" + user + "</li>");
+            $("#user").val(""); 
+        }
+    });
+});
+</script>
+
+</body>
+</html>

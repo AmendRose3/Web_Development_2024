@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Bgclrapp">
+<head>
+  <title>AngularJS Color Picker</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="BgClrcontroller">
+  <h3>Enter colors like red, green, blue...</h3>
+  <label for="color">Enter a color name:</label>
+  <input type="text" id="color" ng-model="clrname">
+  <button ng-click="changeColor()">Change Color</button>
+  <h1>Background Color: {{backgroundColor}}</h1>
+
+  <style>
+    * {
+      background-color: {{backgroundColor}};
+    }
+  </style>
+
+  <script>
+  var app = angular.module('Bgclrapp', []);
+
+    app.controller('BgClrcontroller', function($scope) {
+      $scope.backgroundColor = '';
+
+      $scope.changeColor = function() {
+        var clrname = $scope.clrname.toLowerCase();
+        $scope.backgroundColor = clrname;
+      }
+    });
+  </script>
+</body>
+</html>

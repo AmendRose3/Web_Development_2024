@@ -1,0 +1,45 @@
+
+HP@DESKTOP-KE3PURQ MINGW64 /d/Learning//web development/BACKEND (main)       
+$ mkdir "3.1 Express Server"
+                                      /
+HP@DESKTOP-KE3PURQ MINGW64 /d/Learning/web development/BACKEND (main)       
+$ cd 3.1\ Express\ Server/
+
+HP@DESKTOP-KE3PURQ MINGW64 /d/Learning/web development/BACKEND/3.1 Express Server (main)
+$ touch index.js
+
+HP@DESKTOP-KE3PURQ MINGW64 /d/Learning/web development/BACKEND/3.1 Express Server (main)
+$ npm init -y
+Wrote to D:\Learning\web development\BACKEND\3.1 Express Server\package.json:
+
+{
+  "name": "3.1-express-server",       
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+
+
+HP@DESKTOP-KE3PURQ MINGW64 /d/Learning/web development/BACKEND/3.1 Express Server (main)
+$ pm i express
+bash: pm: command not found
+
+HP@DESKTOP-KE3PURQ MINGW64 /d/Learning/web development/BACKEND/3.1 Express Server (main)
+$ npm i express
+
+added 64 packages, and audited 65 packages in 2s
+
+12 packages are looking for funding       
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+HP@DESKTOP-KE3PURQ MINGW64 /d/Learning/web development/BACKEND/3.1 Express Server (main)
+$
