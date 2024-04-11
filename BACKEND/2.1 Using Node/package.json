@@ -1,7 +1,6 @@
 {
   "name": "learning",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -13,5 +12,8 @@
     "sillyname": "^0.1.0",
     "superheroes": "^3.0.0",
     "superheros": "^1.0.0"
-  }
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "description": ""
 }

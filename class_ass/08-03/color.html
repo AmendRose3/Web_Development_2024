@@ -4,7 +4,7 @@
   <title>AngularJS Color Picker</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </head>
-<body ng-controller="BgClrcontroller">
+<body ng-controller="bgctrl">
   <h3>Enter colors like red, green, blue...</h3>
   <label for="color">Enter a color name:</label>
   <input type="text" id="color" ng-model="clrname">
@@ -20,7 +20,7 @@
   <script>
   var app = angular.module('Bgclrapp', []);
 
-    app.controller('BgClrcontroller', function($scope) {
+    app.controller('bgctrl', function($scope) {
       $scope.backgroundColor = '';
 
       $scope.changeColor = function() {

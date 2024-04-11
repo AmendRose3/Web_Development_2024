@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="movieApp">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-controller="MovieController">
+  <h1><u></u>My Movie Reccomendations</u></h1>
+  <button ng-click="x = 'year'">Year Order</button>
+  <button ng-click="x = 'title'">Title Order</button>
+  <ul>
+    <li ng-repeat="movie in movies | orderBy:x">
+      <h2>{{ movie.title }} ({{ movie.year }})</h2>
+      <h3>Actor:</h3> {{ movie.actor }}<br>
+      <h3>Actress:</h3> {{ movie.actress }}<br>
+      <h3>Director:</h3> {{ movie.director }}<br>
+    </li>
+  </ul>
+
+  <script>
+    angular.module('movieApp', [])
+      .controller('MovieController', ['$scope', function ($scope) {
+        $scope.movies = [
+          {
+            title: 'Neru',
+            year: 2023,
+            actor: 'Mohanlal',
+            actress: 'Sanjitha',
+            director: 'Jay Sharon'
+          },
+          {
+            title: 'Banglore Days',
+            year: 2021,
+            actor: 'Dulqar Salman',
+            actress: 'Nazriya Nazin',
+            director: 'Anjali Menon'
+          },
+          {
+            title: 'COCO',
+            year: 2021,
+            actor: 'Swedik',
+            actress: 'Salamona',
+            director: 'Sebastian'
+          },
+          {
+            title: 'Ambili',
+            year: 2024,
+            actor: 'Soubin ',
+            actress: 'Narmitha',
+            director: 'Jacob P'
+          },
+
+        ];
+
+        $scope.x = '';
+      }]);
+  </script>
+</body>
+
+</html>

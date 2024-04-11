@@ -1,4 +1,4 @@
-const fs=require("fs");//filesystem module is imported
+var fs=require("fs");//filesystem module is imported
 
 // fs.writeFile("Msg.txt","Everything is possible through him",(err) => {
 //     if (err) throw err;

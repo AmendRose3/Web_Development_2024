@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../SEM2/full_stack/EXAMPLE PROGRAMS FOR CAT 2/NodeJS"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "class_ass"
+	}
+}

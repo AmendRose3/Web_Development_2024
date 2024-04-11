@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programming Languages</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<style>
+
+    #desc {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid black;
+        width: 300px;
+    }
+</style>
+</head>
+<body ng-controller="myController">
+    <div class="c1">
+        <input type="checkbox" id="java" class="language" ng-model="languages['Java']" ng-change="showLanguage('Java')"> Java <br>
+        <input type="checkbox" id="javascript" class="language" ng-model="languages['JavaScript']" ng-change="showLanguage('JavaScript')"> JavaScript<br>
+        <input type="checkbox" id="python" class="language" ng-model="languages['Python']" ng-change="showLanguage('Python')"> Python<br>
+    </div>
+
+    <div id="desc">
+        <h2>description:</h2>
+        <p>{{ about[lang] }}</p>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+
+        app.controller('myController', function($scope) {
+            $scope.languages = {
+                'JavaScript': false,
+                'Python': false,
+                'Java': false,
+            };
+
+            $scope.about = {
+                'JavaScript': 'JavaScript is the programming language of the Web.',
+                'Python': 'Python is a high-level programming language.',
+                'Java': 'Java is an object-oriented programming language.',
+            };
+
+            $scope.lang = '';
+
+            $scope.showLanguage = function(language) {
+                $scope.lang = language;
+            };
+       });
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="movieApp">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="MovieController">
+  <h1><u>My Movie Recommendations</u></h1>
+  <br><br>
+    <label for="s">Select Director name:</label>
+    <select ng-model="d" id="s" ng-options="director for director in directors">
+      <option value="">Select Director</option>
+    </select>
+    <button ng-click="show()">Display Movies of Director</button>
+    <label for="yearInput">Enter Year:</label>
+  <input type="number" id="yearInput" ng-model="selectedYear" placeholder="Enter year">
+  <br>
+<ul> 
+    <li ng-repeat="movie in filteredMovies | orderBy:['director', '-year'] | filter:{ year: selectedYear }">
+      <h2>{{ movie.title }} ({{ movie.year }})</h2>
+      <h3>Actor:</h3> {{ movie.actor }}<br>
+      <h3>Actress:</h3> {{ movie.actress }}<br>
+      <h3>Director:</h3> {{ movie.director }}<br>
+    </li>
+  </ul>
+
+  <script>
+    angular.module('movieApp', [])
+      .controller('MovieController', ['$scope', function ($scope) {
+        $scope.movies = [
+          { title: 'Hello', year: 2017, actor: 'Akbar Aman', actress: 'Lalitha', director: 'Anjali Menon' },
+          { title: 'Banglore Days', year: 2020, actor: 'Dulqar Salman', actress: 'Nazriya Nazin', director: 'Anjali Menon' },
+          { title: 'COCO', year: 2021, actor: 'Swedik', actress: 'Salamona', director: 'Sebastian' },
+          { title: 'Ambili', year: 2018, actor: 'Soubin ', actress: 'Narmitha', director: 'Jacob P' },
+          { title: 'Neru', year: 2023, actor: 'Mohanlal', actress: 'Sanjitha', director: 'Jay Sharon' }
+        ];
+        $scope.directors = ['Anjali Menon', 'Sebastian', 'Jacob P', 'Jay Sharon'];
+        $scope.d = '';
+        $scope.selectedYear = '';
+
+        $scope.show = function() {
+          if ($scope.d) {
+            $scope.filteredMovies = $scope.movies.filter(function(movie) {
+              return movie.director == $scope.d;
+            });
+          } else {
+            $scope.filteredMovies = $scope.movies; 
+          }
+        };
+
+        $scope.show(); 
+      }]);
+  </script>
+</body>
+
+</html>
